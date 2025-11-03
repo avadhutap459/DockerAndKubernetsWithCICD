@@ -12,7 +12,7 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["./DockerAndKubernetsWithCICD/DockerAndKubernetsWithCICD.csproj", "DockerAndKubernetsWithCICD/"]
+COPY ["DockerAndKubernetsWithCICD/DockerAndKubernetsWithCICD.csproj", "DockerAndKubernetsWithCICD/"]
 RUN dotnet restore "./DockerAndKubernetsWithCICD/DockerAndKubernetsWithCICD.csproj"
 COPY . .
 WORKDIR "/src/DockerAndKubernetsWithCICD"
